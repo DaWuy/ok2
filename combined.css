@@ -1,0 +1,410 @@
+/* ==== Combined CSS from index.css and dawuy.css ==== */
+
+/* ===== index.css styles ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ff9ec4, #ffd6ec);
+  overflow: hidden;
+  color: white;
+}
+
+#page-index {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-out {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-out.hidden {
+  opacity: 0;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('images/1.png') repeat;
+  animation: twinkle 50s linear infinite;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+@keyframes twinkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 2000px 2000px; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.pass-box {
+  text-align: center;
+}
+
+.pass-box h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.input-field {
+  padding: 12px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+  background: white;
+  color: #ff66a5;
+  font-weight: bold;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.key {
+  background: white;
+  color: #ff66a5;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.key:hover {
+  background-color: #ffe2f0;
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.action {
+  grid-column: span 3;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-clear, .btn-submit {
+  padding: 10px 20px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff66a5;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.btn-clear:hover, .btn-submit:hover {
+  background-color: #ff3c8a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .keypad {
+    grid-template-columns: repeat(3, 60px);
+  }
+
+  .input-field {
+    width: 180px;
+    font-size: 20px;
+  }
+}
+
+
+/* ===== dawuy.css styles ===== */
+body.dawuy-body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Bangers', system-ui;
+      background: linear-gradient(270deg, #ffd1dc, #ffb6c1, #ffe0f7, #e0f7ff);
+      background-size: 800% 800%;
+      animation: gradientShift 15s ease infinite;
+      overflow: hidden;
+      text-align: center;
+      color: #ff1493;
+      position: relative;
+      height: 100vh;
+    }
+    @keyframes gradientShift {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+h1.dawuy-title {
+      font-size: 3.5em;
+      margin-top: 80px;
+      opacity: 0;
+      transform: scale(0.6);
+      animation: popScale 1s ease forwards;
+      animation-delay: 0.3s;
+      color: #ff3366;
+      text-shadow: 0 0 15px #ff66aa;
+      user-select: none;
+    }
+    @keyframes popScale {
+      0% { opacity: 0; transform: scale(0.6); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+.message {
+      font-size: 1.4em;
+      max-width: 650px;
+      margin: 25px auto 0;
+      min-height: 3em;
+      color: #d6336c;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.5s;
+      user-select: none;
+      line-height: 1.6;
+    }
+    @keyframes fadeIn {
+      to {opacity: 1;}
+    }
+
+.balloon {
+      position: absolute;
+      bottom: -80px;
+      width: 40px;
+      height: 60px;
+      border-radius: 50% / 60%;
+      opacity: 0.8;
+      animation: floatUp 10s linear infinite;
+      filter: drop-shadow(0 0 2px #ff77aa);
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
+.gift-btn {
+      margin-top: 35px;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      font-family: 'Coiny', system-ui;
+      font-weight: 400;
+      border: none;
+      background-color: #ff4c8b;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 76, 139, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      opacity: 0;
+      animation: fadeInUp 0.7s ease forwards;
+      animation-delay: 2.5s;
+      z-index: 10;
+    }
+
+.gift-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(255, 76, 139, 0.6);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+.confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+    @keyframes explode {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0.3);
+        opacity: 0;
+      }
+    }
+
+.music-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 1.7em;
+      cursor: pointer;
+      color: #ff3366;
+      background: none;
+      border: none;
+      filter: drop-shadow(0 0 2px #ff77aa);
+      z-index: 11;
+    }
+.cake {
+      position: fixed;
+      top: 60vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 180px;
+      background-image: url('images/favicon.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 15;
+      transition: top 1.5s ease, opacity 0.3s ease;
+    }
+.firework-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.firework {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 20px;
+  background: radial-gradient(circle, #fff 0%, transparent 70%);
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom center;
+  opacity: 0;
+  animation: fireworkExplode 1s ease forwards;
+}
+
+@keyframes fireworkExplode {
+  0% { opacity: 1; transform: translateY(0) scaleY(1); }
+  100% { opacity: 0; transform: translateY(-100px) scaleY(3); }
+}
+
+.photo {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  border: 5px solid white;
+  background: white;
+  z-index: 30;
+  transition: transform 3s ease, opacity 3s ease;
+  transform: translate(-50%, -50%);
+}
+
+
+@media (max-width: 480px) {
+      h1 {
+        font-size: 2.2em;
+        margin-top: 50px;
+      }
+      .message {
+        font-size: 1.1em;
+        max-width: 90%;
+      }
+      .gift-btn {
+        font-size: 1em;
+        padding: 10px 24px;
+      }
+      .cake {
+        width: 120px;
+        height: 120px;
+        top: 65vh !important;
+      }
+      .firework-container {
+        width: 140px;
+        height: 140px;
+      }
+      .photo {
+        width: 70px !important;
+        height: 70px !important;
+        border-radius: 15px !important;
+        border-width: 3px !important;
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.6) !important;
+      }
+    }
+

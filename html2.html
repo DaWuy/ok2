@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday Project Combined</title>
+
+  <!-- Fonts Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <link rel="stylesheet" href="combined.css" />
+</head>
+<body>
+
+  <!-- PAGE 1: Pass Input Page -->
+  <div id="page-index">
+    <div class="stars"></div>
+    <div class="container">
+      <div class="avatar">
+        <img src="images/1.png" alt="Avatar" />
+        🧸🧸🧸
+      </div>
+      <div class="pass-box">
+        <h1>Ngày Sinh Nhật 🎂</h1>
+        <input type="text" class="input-field" id="pass" readonly />
+        <div class="keypad">
+          <div class="key" onclick="appendNum('1')">1</div>
+          <div class="key" onclick="appendNum('2')">2</div>
+          <div class="key" onclick="appendNum('3')">3</div>
+          <div class="key" onclick="appendNum('4')">4</div>
+          <div class="key" onclick="appendNum('5')">5</div>
+          <div class="key" onclick="appendNum('6')">6</div>
+          <div class="key" onclick="appendNum('7')">7</div>
+          <div class="key" onclick="appendNum('8')">8</div>
+          <div class="key" onclick="appendNum('9')">9</div>
+          <div class="key" onclick="clearPass()">X</div>
+          <div class="key" onclick="appendNum('0')">0</div>
+          <div class="key" onclick="submitPass()">✔</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Birthday Celebration Page, initially hidden -->
+  <div id="page-dawuy" style="display:none;">
+
+    <!-- Move <h1> to top -->
+    <h1>🎂 Chúc mừng sinh nhật! 🎉</h1>
+
+    <!-- Nút bật/tắt nhạc SoundCloud -->
+    <button class="music-btn" id="musicBtn" title="Bật/tắt nhạc">🔇</button>
+
+    <!-- Iframe nhạc SoundCloud ẩn (kích thước 0 để chỉ phát âm thanh) -->
+    <iframe
+      id="sc-player"
+      width="0"
+      height="0"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1722850962&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=false&muted=true">
+    </iframe>
+
+    <div class="message" id="typing"></div>
+    <button class="gift-btn" id="giftBtn">🎁 Mở quà bất ngờ 🎁</button>
+
+    <div class="cake" id="cake"></div>
+    <div class="firework-container" id="fireworkContainer"></div>
+  </div>
+
+  <script src="combined.js"></script>
+</body>
+</html>
+
