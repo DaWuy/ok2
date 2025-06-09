@@ -66,13 +66,13 @@ let isPlaying = false;
 
 musicBtn.addEventListener('click', () => {
   if (isPlaying) {
-    // Mute music
-    scPlayer.src = scPlayer.src.replace('muted=false', 'muted=true');
+    // Mute music (not changing src, just change the volume to 0)
+    scPlayer.contentWindow.postMessage('{"method":"setVolume","value":0}', '*');
     musicBtn.textContent = "🔇";
     isPlaying = false;
   } else {
-    // Unmute music
-    scPlayer.src = scPlayer.src.replace('muted=true', 'muted=false');
+    // Unmute music (not changing src, just change the volume to 100)
+    scPlayer.contentWindow.postMessage('{"method":"setVolume","value":100}', '*');
     musicBtn.textContent = "🔈";
     isPlaying = true;
   }
@@ -196,7 +196,7 @@ function showDawuyPage() {
 
   // Reset music button and iframe muted state
   isPlaying = false;
-  musicBtn.textContent = "🔇";
+  musicBtn.textContent = "🔈";
   if(scPlayer.src.indexOf('muted=false') !== -1) {
     scPlayer.src = scPlayer.src.replace('muted=false', 'muted=true');
   } else if(scPlayer.src.indexOf('muted=true') === -1) {

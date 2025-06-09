@@ -193,6 +193,10 @@ body.dawuy-body {
       color: #ff1493;
       position: relative;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
     @keyframes gradientShift {
       0%{background-position:0% 50%}
@@ -200,7 +204,7 @@ body.dawuy-body {
       100%{background-position:0% 50%}
     }
 
-h1.dawuy-title {
+#h1-dawuy {
       font-size: 3.5em;
       margin-top: 80px;
       opacity: 0;
