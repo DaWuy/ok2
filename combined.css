@@ -204,7 +204,7 @@ body.dawuy-body {
       100%{background-position:0% 50%}
     }
 
-#h1-dawuy {
+.h1-dawuy {
       font-size: 3.5em;
       margin-top: 80px;
       opacity: 0;
@@ -382,7 +382,7 @@ body.dawuy-body {
 
 
 @media (max-width: 480px) {
-      h1 {
+      .h1-dawuy {
         font-size: 2.2em;
         margin-top: 50px;
       }
